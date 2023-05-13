@@ -1,0 +1,11 @@
+POST http://localhost:5500/save_data/
+Content-Type: application/json
+
+{
+    "input1":"kohli",
+    "input2":"prasa"
+}
+
+###
+
+GET http://localhost:5500/getData/
