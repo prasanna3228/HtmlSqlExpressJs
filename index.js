@@ -33,26 +33,25 @@ app.post('/save_data',async(req,res)=>{
         const {input1,input2}=req.body;
     const insertQuery=`
     INSERT INTO emp (input1,input2) VALUES ('${input1}','${input2}')`;
+    
     await db.run(insertQuery)
     res.send("Data saved successfully")
     }catch(error){
         console.log("Error saving data",error)
 
-    }
-    
-
+    }  
 })
 
 
 app.get("/getData/",async(req,res)=>{
     const getDataa=`
-    select * from contacts`;
+    select * from emp`;
 
     const c=await db.all(getDataa)
     res.send(c)
 
 })
 
-app.get('/save',(req,res)=>{
+app.get('/openHtml',(req,res)=>{
     res.sendFile("index.html",{root:__dirname})
 })
